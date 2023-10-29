@@ -60,4 +60,10 @@ router.get('/canBookmark/:token', (req, res) => {
   });
 });
 
+router.get('/', (req, res) => {
+  User.find().then(data => {
+    res.json({result: true, users: data})
+  })
+})
+
 module.exports = router;
